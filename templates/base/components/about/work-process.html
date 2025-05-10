@@ -1,0 +1,36 @@
+{% set process = [
+    {
+        'icon': 'fa-solid fa-people-group text-primary',
+        'title': 'Families',
+        'desc': 'Traveling with kids? Home exchange offers the space, comfort, and practicality families need—extra bedrooms, kitchens for home-cooked meals, toys and books, and a local neighborhood that feels safe and familiar.'
+    },
+    {
+        'icon': 'fa-solid fa-layer-group text-primary',
+        'title': 'Retirees & Empty Nesters',
+        'desc': 'With more flexibility and time to explore, retirees love the relaxed, homey feel of our exchanges. Discover new places at your own pace, connect with local cultures, and travel often—without breaking the bank.'
+    },
+    {
+        'icon': 'fa-solid fa-layer-group text-primary',
+        'title': 'Eco-Conscious Travelers',
+        'desc': 'Reduce your carbon footprint while enjoying meaningful experiences. Home exchanging helps fight over-tourism, supports sustainable travel, and makes use of homes that already exist—no new resources required.'
+    },
+    {
+        'icon': 'fa-solid fa-layer-group text-primary',
+        'title': 'Adventure Seekers',
+        'desc': 'If you are driven by curiosity and crave deeper cultural immersion, this is for you. Stay in authentic neighborhoods, follow local tips from your exchange partner, and enjoy adventures that go beyond the typical tourist trail.'
+    },
+    {
+        'icon': 'fa-solid fa-layer-group text-primary',
+        'title': 'Remote Workers & Digital Nomads',
+        'desc': 'Work from anywhere, live like a local. Skip the noisy hotels and sterile apartments—stay in real homes with Wi-Fi, kitchens, and cozy workspaces. Enjoy longer stays and a richer lifestyle while keeping your travel costs low.'
+    }
+] %}
+{% for item in process %}
+<div class="icon-mi-left">
+    <i class="{{ item.icon }}"></i>
+    <div class="icon-mi-left-content">
+        <h4>{{ item.title }}</h4>
+        <p>{{ item.desc }}</p>
+    </div>
+</div>
+{% endfor %}

@@ -1,0 +1,167 @@
+<!-- Start Navigation -->
+<div class="header header-transparent">
+    <div class="container">
+        <nav id="navigation" class="navigation navigation-landscape">
+            <div class="nav-header">
+                <a class="nav-brand text-logo exchange" href="/">
+                    <span class="svg-icon svg-icon-2hx">
+                </a>
+                <div class="nav-toggle"></div>
+                <div class="mobile_nav">
+                    <ul>
+                        {% if 'user' in session %}
+                        <li class="relative parent-parent-menu-item">
+                            <div class="btn-group account-drop">
+                                <a href="javascript:void(0);" onclick="openFilterSearch()" class="btn-order-by-filt">
+                                    <img src="static/img/team-1.jpg" class="avater-img header-avater-img" alt="">
+                                </a>
+                            </div>
+                        </li>
+                        {% else %}
+
+                        <li>
+                            <a href="JavaScript:Void(0);" data-bs-toggle="modal" data-bs-target="#login" class="text-muted">
+                                <span class="svg-icon svg-icon-2hx">
+                                    <svg width="35" height="35" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path opacity="0.3" d="M16.5 9C16.5 13.125 13.125 16.5 9 16.5C4.875 16.5 1.5 13.125 1.5 9C1.5 4.875 4.875 1.5 9 1.5C13.125 1.5 16.5 4.875 16.5 9Z" fill="currentColor"/>
+                                        <path d="M9 16.5C10.95 16.5 12.75 15.75 14.025 14.55C13.425 12.675 11.4 11.25 9 11.25C6.6 11.25 4.57499 12.675 3.97499 14.55C5.24999 15.75 7.05 16.5 9 16.5Z" fill="currentColor"/>
+                                        <rect x="7" y="6" width="4" height="4" rx="2" fill="currentColor"/>
+                                    </svg>
+                                </span>
+                            </a>
+                        </li>
+                        {% endif %}
+
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="d-lg-none col-lg-3 col-md-12">
+				
+				<div class="simple-sidebar sm-sidebar" id="filter_search">
+					
+					<div class="search-sidebar_header">
+						<h4 class="ssh_heading">Close Filter</h4>
+						<button onclick="closeFilterSearch()" class="w3-bar-item w3-button w3-large"><i class="fa-regular fa-circle-xmark fs-5 text-muted-2"></i></button>
+					</div>
+					
+					<div class="sidebar-widgets">
+						<div class="dashboard-navbar">
+							
+							<div class="d-user-avater">
+								<img src="static/img/team-1.jpg" class="img-fluid avater" alt="">
+								<h4>Sumant</h4>
+								<span>Delhi</span>
+							</div>
+							
+							<div class="d-navigation">
+								<ul>
+									<li><a href="/dashboard"><i class="fa-solid fa-gauge"></i>Dashboard</a></li>
+									<li><a href="/my-profile"><i class="fa-solid fa-address-card"></i>My Profile</a></li>
+									<li><a href="/my-property"><i class="fa-solid fa-building-circle-check"></i>My Properties</a></li>
+									<li><a href="/submit-property"><i class="fa-solid fa-house"></i>Submit New Property</a></li>
+									<li><a href="/change-password"><i class="fa-solid fa-unlock"></i>Change Password</a></li>
+									<li><a href="{{ url_for('logout') }}"><i class="fa-solid fa-power-off"></i>Log Out</a></li>
+								</ul>
+							</div>
+							
+						</div>
+					</div>
+					
+				</div>
+			</div>
+
+
+            <div class="nav-menus-wrapper" style="transition-property: none;">
+                <ul class="nav-menu nav-menu-center">
+                
+                    <li class="relative parent-parent-menu-item">
+                        <a href="/" class="home-link">Home</a>
+                    </li>
+                    <li><a href="/about-us" class="sub-menu-item">About Us</a></li>
+                    <li><a href="/contact" class="sub-menu-item">Contacts</a></li>
+                    
+                </ul>
+
+                <ul class="nav-menu nav-menu-social align-to-right">
+                    {% if 'user' in session %}
+                    <!-- Show when logged in -->
+                    <li class="relative parent-parent-menu-item">
+                        <div class="btn-group account-drop">
+                            <button type="button" class="btn btn-order-by-filt account-head-color dropdown-toggle" id="showbutton-desktop">
+                                <img src="{{ url_for('static', filename='img/team-1.jpg') }}" style="border: 2px solid #ffffff;" class="avater-img" alt="">
+                                <span>Hi, Sumant</span>
+                            </button>
+                            <div class="dropdown-menu pull-right" id="showing-desktop">
+                                <a href="/dashboard" class="sub-menu-item"><i class="fa-solid fa-gauge"></i>Dashboard</a>
+                                <a href="/my-profile" class="sub-menu-item"><i class="fa-solid fa-address-card"></i>My Profile</a>
+                                <a href="/my-property" class="sub-menu-item"><i class="fa-solid fa-building-circle-check"></i>My Property</a>
+                                <a href="/submit-property" class="sub-menu-item"><i class="fa-solid fa-house"></i>Submit New Property</a>
+                                <a href="/change-password" class="sub-menu-item"><i class="fa-solid fa-unlock"></i>Change Password</a>
+                                <a href="{{ url_for('logout') }}" class="sub-menu-item"><i class="fa-solid fa-power-off"></i>Log Out</a>
+                            </div>
+                        </div>
+                    </li>
+                    {% else %}
+                    <!-- Show when NOT logged in -->
+                    <li>
+                        <a href="JavaScript:Void(0);" data-bs-toggle="modal" data-bs-target="#login" class="fw-medium text-invers">
+                            <span class="svg-icon svg-icon-2hx me-1">
+                                <svg width="22" height="22" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.3" d="M16.5 9C16.5 13.125 13.125 16.5 9 16.5C4.875 16.5 1.5 13.125 1.5 9C1.5 4.875 4.875 1.5 9 1.5C13.125 1.5 16.5 4.875 16.5 9Z" fill="currentColor"/>
+                                    <path d="M9 16.5C10.95 16.5 12.75 15.75 14.025 14.55C13.425 12.675 11.4 11.25 9 11.25C6.6 11.25 4.57499 12.675 3.97499 14.55C5.24999 15.75 7.05 16.5 9 16.5Z" fill="currentColor"/>
+                                    <rect x="7" y="6" width="4" height="4" rx="2" fill="currentColor"/>
+                                </svg>
+                            </span>
+                            Sign Up
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+                
+
+            </div>
+        </nav>
+    </div>
+</div>
+<!-- End Navigation -->
+<div class="clearfix"></div>
+
+    <!-- log-in code  -->
+    {% include '/base/components/navbar/log-in.html' %}
+
+
+
+<script>
+    const currentPath = window.location.pathname;
+    console.log(currentPath);
+
+    // Find and highlight the active submenu item
+    const subMenuItems = document.querySelectorAll('.sub-menu-item');
+    subMenuItems.forEach((item) => {
+        if (item.getAttribute('href') === currentPath) {
+            item.classList.add('active');
+
+            // Highlight all parent menus recursively
+            let parentMenu = item.closest('.parent-menu-item');
+            while (parentMenu && !parentMenu.classList.contains('processed')) {
+                const parentLink = parentMenu.querySelector('a');
+                if (parentLink) {
+                    parentLink.classList.add('active');
+                }
+                parentMenu.classList.add('processed'); // Mark as processed to avoid re-processing
+                parentMenu = parentMenu.closest('.parent-parent-menu-item');
+            }
+
+            // Highlight the top-level parent menu
+            const topLevelMenu = item.closest('.parent-parent-menu-item');
+            if (topLevelMenu) {
+                const topLevelLink = topLevelMenu.querySelector('.home-link');
+                if (topLevelLink) {
+                    topLevelLink.classList.add('active');
+                }
+            }
+        }
+    });
+</script>

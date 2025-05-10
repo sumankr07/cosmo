@@ -1,0 +1,70 @@
+{% set packages = [
+    {
+        'price': "X,XXX",
+        'title': "Basic Package",
+        'btn': "Choose Plan",
+        'style': "pricing-header bg-dark",
+        'style1': "pr-title text-info",
+        'style2': "btn btn-light-primary rounded full-width",
+        'benefits1': "Limited home exchanges",
+        'benefits2': "Browse community listings",
+        'benefits3': "Create & verify profile",
+        'benefits4': "Support during work hours",
+        'benefits5': "Best for short or occasional trips"
+    },
+    {
+        'price': "X,XXX",
+        'title': "STANDARD PACKAGE",
+        'btn': "Choose Plan",
+        'style': "pricing-header bg-primary",
+        'style1': "pr-title text-light",
+        'style2': "btn btn-dark rounded full-width",
+        'benefits1': "Unlimited exchanges (12 months)",
+        'benefits2': "Priority search visibility",
+        'benefits3': "Full messaging access",
+        'benefits4': "24/7 support",
+        'benefits5': "Trusted member badge"
+    },
+    {
+        'price': "X,XXX",
+        'title': "PREMIUM PACKAGE",
+        'btn': "Choose Plan",
+        'style': "pricing-header bg-dark",
+        'style1': "pr-title text-info",
+        'style2': "btn btn-light-primary rounded full-width",
+        'benefits1': "All Standard benefits",
+        'benefits2': "Premium listing & highlights",
+        'benefits3': "Personal exchange advisor",
+        'benefits4': "Exclusive events & perks",
+        'benefits5': "Travel security guarantee"
+    }
+] %}
+{% for item in packages %}
+<!-- Single Package -->
+<div class="col-xl-4 col-lg-4 col-md-5">
+    <div class="pricing-wrap py-3 px-3">
+        
+        <div class="{{ item.style }}">
+            <h4 class="pr-value text-light">
+                <sup class="text-light opacity-75">₹</sup>{{ item.price }}
+            </h4>
+            <h4 class="{{ item.style1 }}">{{ item.title }}</h4>
+        </div>
+
+        <div class="pricing-body px-2">
+            <ul class="p-0">
+                <li><span class="text-success me-2"><i class="fa-solid fa-circle-check"></i></span>{{ item.benefits1 }}</li>
+                <li><span class="text-success me-2"><i class="fa-solid fa-circle-check"></i></span>{{ item.benefits2 }}</li>
+                <li><span class="text-success me-2"><i class="fa-solid fa-circle-check"></i></span>{{ item.benefits3 }}</li>
+                <li><span class="text-success me-2"><i class="fa-solid fa-circle-check"></i></span>{{ item.benefits4 }}</li>
+                <li><span class="text-success me-2"><i class="fa-solid fa-circle-check"></i></span>{{ item.benefits5 }}</li>
+            </ul>
+        </div>
+
+        <div class="pricing-bottom mt-5 mb-1 px-2">
+            <a href="#" class="{{ item.style2 }}">{{ item.btn }}</a>
+        </div>
+
+    </div>
+</div>
+{% endfor %}

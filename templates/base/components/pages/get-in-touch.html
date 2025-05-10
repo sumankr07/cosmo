@@ -1,0 +1,36 @@
+<!-- contact.html -->
+{% set touchs = [
+    {
+        'icon': 'fa-solid fa-house',
+        'title': 'Reach Us',
+        'name': '111A-36, sector 3, Vaishali, Ghaziabad, UP 201010, India',
+        'name1': '',
+        'name2': ''
+    },
+    {
+        'icon': 'fa-solid fa-envelope-circle-check',
+        'title': 'Drop A Mail',
+        'name': '<a href="mailto:contact@cosmoxclub.com">contact@cosmoxclub.com</a>',
+        'name1': '',
+        'name2': ''
+    },
+    {
+        'icon': 'fa-solid fa-phone-volume',
+        'title': 'Call Us',
+        'name': '<a href="tel:+91-9354080920">+91-9354080920</a>',
+        'name1': '',
+        'name2': ''
+    }
+] %}
+
+{% for item in touchs %}
+<div class="cn-info-detail mt-4">
+    <div class="cn-info-icon">
+        <i class="{{ item.icon }}"></i>
+    </div>
+    <div class="cn-info-content">
+        <h4 class="cn-info-title">{{ item.title }}</h4>
+        {{ item.name | safe }}<br>{{ item.name1 }}<br>{{ item.name2 }}
+    </div>
+</div>
+{% endfor %}

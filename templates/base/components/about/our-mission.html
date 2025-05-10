@@ -1,0 +1,33 @@
+{% set missions = [
+    {
+        'icon': 'fa-solid fa-basket-shopping text-primary',
+        'title': 'Contact Sales',
+        'contact': 'contact@cosmoxclub.com',
+        'contact1': '+91-9354080920',
+        'style': ''
+    },
+    {
+        'icon': 'fa-solid fa-user-tie text-primary',
+        'title': 'Contact Sales',
+        'contact': 'contact@cosmoxclub.com',
+        'contact1': '+91-9354080920',
+        'style': ''
+    },
+    {
+        'icon': 'fa-solid fa-comments text-primary',
+        'title': 'Start Live Chat',
+        'contact': '+91-9354080920',
+        'contact1': 'Live Chat',
+        'style': 'live-chat'
+    }
+] %}
+{% for item in missions %}
+<div class="col-lg-4 col-md-4 col-sm-12">
+    <div class="contact-box">
+        <i class="{{ item.icon }}"></i>
+        <h4>{{ item.title }}</h4>
+        <p>{{ item.contact }}</p>
+        <span class="{{ item.style }}">{{ item.contact1 }}</span>
+    </div>
+</div>
+{% endfor %}

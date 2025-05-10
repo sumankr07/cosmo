@@ -1,0 +1,81 @@
+{% extends '/base/style/base.html' %}
+
+{% block content %}
+
+<!-- ============================ Page Title Start================================== -->
+<div class="page-title">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-12">
+				
+				<h2 class="ipt-title">About Us</h2>
+				<span class="ipn-subtitle">Who we are & our mission</span>
+				
+			</div>
+		</div>
+	</div>
+</div>
+<!-- ============================ Page Title End ================================== -->
+
+<!-- ============================ Our Story Start ================================== -->
+<section>
+
+	<div class="container">
+	
+		<!-- row Start -->
+		<div class="row align-items-center">
+
+			<div class="col-lg-6 col-md-6">
+				<img src="static/img/sb.png" class="img-fluid" alt="" />
+			</div>
+
+			<div class="col-lg-6 col-md-6">
+				<div class="story-wrap explore-content">
+					
+					<h2>About Cosmo Xclub</h2>
+					<p>Cosmo Xclub is an exchange company involved in the Holiday Exchange program business. The concept entitles you to exchange your holiday home with the same or higher standard holiday home/villa/resort or hotel room for the same number of days.</p>
+					<p>Cosmopolitan XClub pvt ltd. is highly inspired by Sustainable Development Goals as set by the UNO and aims at working towards responsible tourism.</p>					
+				</div>
+			</div>
+			
+		</div>
+		<!-- /row -->					
+		
+	</div>
+			
+</section>
+<!-- ============================ Our Story End ================================== -->
+
+<!-- ================= Our Mission ================= -->
+<section>
+	<div class="container">
+	
+		<div class="row">
+			<div class="col-lg-12 col-md-12">
+				<div class="sec-heading center">
+					<h2>Who Is It For?</h2>
+					<p>Whether you're a solo traveler, digital nomad, couple, or family — our platform is built for you. It’s especially loved by:</p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row align-items-center">
+			
+			<div class="col-lg-6 col-md-6">
+				
+				<!-- work-process code  -->
+				 {% include '/base/components/about/work-process.html' %}
+
+				
+			</div>
+			
+			<div class="col-lg-6 col-md-6">
+				<img src="static/img/vec-2.png" class="img-fluid" alt="" />
+			</div>
+			
+		</div>
+	</div>
+</section>
+<!-- ================= Our Mission ================= -->
+
+{% endblock %}	
